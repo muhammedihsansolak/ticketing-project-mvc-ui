@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
+@EntityListeners(BaseEntityListener.class)
 public class BaseEntity {
 
     @Id
@@ -31,19 +32,7 @@ public class BaseEntity {
     private Long lastUpdateUserId;
 
 
-    @PrePersist
-    private void onPrePersist(){
-        this.insertDateTime = LocalDateTime.now();
-        this.lastUpdateDateTime=LocalDateTime.now();
-        this.insertUserId=1L;
-        this.lastUpdateUserId=1L;
-    }
 
-    @PreUpdate
-    private void onPreUpdate(){
-        this.lastUpdateDateTime=LocalDateTime.now();
-        this.lastUpdateUserId=1L;
-    }
 
 
 
