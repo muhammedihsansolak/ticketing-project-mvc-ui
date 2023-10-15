@@ -60,6 +60,7 @@ public class UserPrincipal implements UserDetails {
         return this.user.isEnabled();
     }
 
+    //it is for baseEntityListener
     public Long getId(){
         return this.user.getId();
     }
