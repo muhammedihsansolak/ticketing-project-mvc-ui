@@ -35,7 +35,7 @@ public class BaseEntityListener extends AuditingEntityListener {
             baseEntity.setInsertUserId(((UserPrincipal) principal).getId());
             baseEntity.setLastUpdateUserId( ((UserPrincipal) principal).getId());
         }
-//-----> We can use like that:
+//-----> We can use like this:
         //        String username = SecurityContextHolder.getContext().getAuthentication().getName();
 //        User loggedUser = userRepository.findByUserNameAndIsDeleted(username, false);
 
