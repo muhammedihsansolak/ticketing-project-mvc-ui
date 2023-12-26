@@ -4,20 +4,13 @@ import com.cydeo.service.SecurityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
+@EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true)
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
@@ -25,37 +18,26 @@ public class SecurityConfig {
     private final SecurityService securityService;
     private final AuthSuccessHandler authSuccessHandler;
 
-//    @Bean
-//    public UserDetailsService userDetailsService(PasswordEncoder encoder){
-//        List<UserDetails> userList = new ArrayList<>();
-//        userList.addAll(Arrays.asList( //manuel hardcoded users
-//                new User("mike", encoder.encode("password"), Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"))),
-//                new User("ozzy", encoder.encode("password"), Arrays.asList(new SimpleGrantedAuthority("ROLE_MANAGER")))
-//        ));
-//
-//        return new InMemoryUserDetailsManager(userList);
-//    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
                 .authorizeRequests()
-//               .antMatchers("/user/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasAuthority("Admin")
-                .antMatchers("/project/**").hasAuthority("Manager")
-                .antMatchers("/task/employee/**").hasAuthority("Employee")
+                .antMatchers("/project/manager/**").hasAuthority("Manager")
                 .antMatchers("/task/**").hasAuthority("Manager")
-//                .antMatchers("/task/**").hasAnyRole("EMPLOYEE","ADMIN")
-//                .antMatchers("/task/**").hasAuthority("ROLE_EMPLOYEE")
+                .antMatchers("/task/employee/**").hasAuthority("Employee")
                 .antMatchers(
-                        "/", "/login", "/fragments/**", "/assets/**", "/images/**"
+                        "/",
+                        "/login",
+                        "/fragments/**",
+                        "/assets/**",
+                        "/images/**"
                 ).permitAll()
                 .anyRequest().authenticated()
                 .and()
-//                .httpBasic()
                 .formLogin()
                     .loginPage("/login")
-//                    .defaultSuccessUrl("/welcome")
                     .successHandler(authSuccessHandler)
                     .failureUrl("/login?error=true")
                     .permitAll()
