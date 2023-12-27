@@ -36,8 +36,9 @@ contributing to project execution and success.</ul>
 - PostgreSQL
 - Spring Security
 - Maven
-- Docker 
+- Docker
 
+---
 
 ### Business Logics
 
@@ -67,37 +68,37 @@ contributing to project execution and success.</ul>
 ---
 ### Login Page
 <p align="center">
-    <img src="ss/login page.png" alt="Main Information">
+    <img src="ss/login page.png" alt="Login Page" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 
 ### Admin Console
 <p align="center">
-    <img src="ss/Admin Console.png" alt="Main Information">
+    <img src="ss/Admin Console.png" alt="Admin Console" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 
 ### Manager Console
 <p align="center">
-    <img src="ss/manager console.png" alt="Main Information">
+    <img src="ss/manager console.png" alt="Manager Console 1" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 <p align="center">
-    <img src="ss/manager console 2.png" alt="Main Information">
+    <img src="ss/manager console 2.png" alt="Manager Console 2" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 <p align="center">
-    <img src="ss/manager console 3.png" alt="Main Information">
+    <img src="ss/manager console 3.png" alt="Manager Console 3" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 
 ### Employee Console
 <p align="center">
-    <img src="ss/employee console.png" alt="Main Information">
+    <img src="ss/employee console.png" alt="Employee Console 1" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 <p align="center">
-    <img src="ss/employee console 2.png" alt="Main Information">
+    <img src="ss/employee console 2.png" alt="Employee Console 2" style="border: 1px solid #ddd; border-radius: 5px;">
 </p>
 
 ---
 ### Prerequisites
 
----
+
 - Maven or Docker
 ---
 
