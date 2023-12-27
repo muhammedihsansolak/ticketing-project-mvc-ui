@@ -40,8 +40,6 @@ jobs:
       - run:
           name: Execute Deployment Script (EC2)
           command: |
-            echo "ec2-key" > ~/.ssh/id_rsa
-            chmod 600 ~/.ssh/id_rsa
             ssh -o "StrictHostKeyChecking=no" ec2-user@ec2-16-171-236-209.eu-north-1.compute.amazonaws.com <<'ENDSSH'
             /bin/bash bin/deploy_image.sh
             docker ps
