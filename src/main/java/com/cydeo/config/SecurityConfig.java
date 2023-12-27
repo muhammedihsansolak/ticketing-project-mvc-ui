@@ -25,8 +25,8 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/user/**").hasAuthority("Admin")
                 .antMatchers("/project/manager/**").hasAuthority("Manager")
-                .antMatchers("/task/**").hasAuthority("Manager")
                 .antMatchers("/task/employee/**").hasAuthority("Employee")
+                .antMatchers("/task/**").hasAuthority("Manager")
                 .antMatchers(
                         "/",
                         "/login",
