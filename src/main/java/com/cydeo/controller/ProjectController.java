@@ -24,7 +24,7 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    @PreAuthorize("hasAuthority('Admin')")
+    @PreAuthorize("hasAuthority('Manager')")
     @GetMapping("/create")
     public String createProject(Model model) {
 
