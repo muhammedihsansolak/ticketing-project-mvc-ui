@@ -66,34 +66,18 @@ contributing to project execution and success.</ul>
 </ul>
 
 ---
-### Login Page
-<p align="center">
-    <img src="ss/login page.png" alt="Login Page" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
+# Login Page
+![Login Page](ss/login_page.png)
 
-### Admin Console
-<p align="center">
-    <img src="ss/Admin Console.png" alt="Admin Console" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
+# Admin Console
+![Admin Console](ss/admin_console.png)
 
-### Manager Console
-<p align="center">
-    <img src="ss/manager console.png" alt="Manager Console 1" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
-<p align="center">
-    <img src="ss/manager console 2.png" alt="Manager Console 2" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
-<p align="center">
-    <img src="ss/manager console 3.png" alt="Manager Console 3" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
+# Manager Console
+![Manager Console 1](ss/manager_console_1.png) ![Manager Console 2](ss/manager_console_2.png) ![Manager Console 3](ss/manager_console_3.png)
 
-### Employee Console
-<p align="center">
-    <img src="ss/employee console.png" alt="Employee Console 1" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
-<p align="center">
-    <img src="ss/employee console 2.png" alt="Employee Console 2" style="border: 1px solid #ddd; border-radius: 5px;">
-</p>
+# Employee Console
+![Employee Console 1](ss/employee_console_1.png) ![Employee Console 2](ss/employee_console_2.png)
+
 
 ---
 ### Prerequisites
