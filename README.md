@@ -98,7 +98,7 @@ contributing to project execution and success.</ul>
 ---
 ### Prerequisites
 
----
+
 - Maven or Docker
 ---
 
