@@ -33,16 +33,14 @@ jobs:
           name: Create Docker image and push to ECR
           command: docker login --username AWS --password "$(aws ecr get-login-password --region eu-north-1)" 076138868573.dkr.ecr.eu-north-1.amazonaws.com && docker build -t ticketing-app /tmp/workspace && docker tag ticketing-app:latest 076138868573.dkr.ecr.eu-north-1.amazonaws.com/ticketing-app:latest && docker tag ticketing-app:latest 076138868573.dkr.ecr.eu-north-1.amazonaws.com/ticketing-app:latest
   deploy-job:
-    docker:
-      #specify the version you desire here
-      - image: circleci/node:10.0.0
+    machine: true
     steps:
       - run:
-          name: Execute Deployment Script (EC2)
+          name: Execute Deployment Script
           command: |
             ssh -o "StrictHostKeyChecking=no" ec2-user@ec2-16-171-236-209.eu-north-1.compute.amazonaws.com <<'ENDSSH'
             /bin/bash bin/deploy_image.sh
-            docker ps
+            ENDSSH
 workflows:
   version: 2
   build_and_test:

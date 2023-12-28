@@ -30,6 +30,7 @@ public class SecurityConfig {
                 .antMatchers(
                         "/",
                         "/login",
+                        "/actuator/**",
                         "/fragments/**",
                         "/assets/**",
                         "/images/**"
