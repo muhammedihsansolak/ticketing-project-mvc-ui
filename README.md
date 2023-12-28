@@ -35,6 +35,7 @@ contributing to project execution and success.</ul>
 - Spring data, JPA & Hibernate,
 - PostgreSQL
 - Spring Security
+- Prometheus & Grafana
 - Maven
 - Docker
 

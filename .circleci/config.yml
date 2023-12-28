@@ -31,7 +31,7 @@ jobs:
       - run: ls -a /tmp/workspace
       - run:
           name: Create Docker image and push to ECR
-          command: docker login --username AWS --password "$(aws ecr get-login-password --region eu-north-1)" 076138868573.dkr.ecr.eu-north-1.amazonaws.com && docker build -t ticketing-app /tmp/workspace && docker tag ticketing-app:latest 076138868573.dkr.ecr.eu-north-1.amazonaws.com/ticketing-app:latest && docker tag ticketing-app:latest 076138868573.dkr.ecr.eu-north-1.amazonaws.com/ticketing-app:latest
+          command: docker login --username AWS --password "$(aws ecr get-login-password --region eu-north-1)" 076138868573.dkr.ecr.eu-north-1.amazonaws.com && docker build -t ticketing-app /tmp/workspace && docker tag ticketing-app:latest 076138868573.dkr.ecr.eu-north-1.amazonaws.com/ticketing-app:latest
   deploy-job:
     machine: true
     steps:
