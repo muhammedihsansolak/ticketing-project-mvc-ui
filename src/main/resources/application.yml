@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/ticketing-app
+    url: jdbc:postgresql://ticketingapp.cdqvkf6bxfys.eu-north-1.rds.amazonaws.com:5432/ticketingapp
     username: postgres
-    password: 123
+    password: cydeo123
 
   jpa:
     defer-datasource-initialization: true
