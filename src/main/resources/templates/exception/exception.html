@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <title>Error Page</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            text-align: center;
-            padding: 50px;
-        }
-
-        h1 {
-            color: #007bff;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        #created {
-            color: #28a745;
-        }
-
-        .error-message {
-            font-size: 18px;
-            color: #dc3545;
-            margin-top: 20px;
-        }
-
-        .support-info {
-            margin-top: 20px;
-        }
-    </style>
-</head>
+<head th:replace="/fragments/head :: head"></head>
 
 <body>
-<h1>Error Page</h1>
 
-<p th:if="${url}">
-    <b>Page:</b> <span th:text="${url}">Page URL</span>
-</p>
+<div class="dashboard-main-wrapper">
 
-<p th:if="${timestamp}" id='created'>
-    <b>Occurred:</b> <span th:text="${timestamp}">Timestamp</span>
-</p>
+    <div th:replace="/fragments/header :: header"></div>
 
-<p th:if="${status}">
-    <b>Response Status:</b> <span th:text="${status}">status-code</span> <span
-        th:if="${error}" th:text="'('+${error}+')'">error ...</span>
-</p>
+    <div th:replace="/fragments/left-sidebar :: left-sidebar"></div>
 
-<p class="error-message">Application has encountered an error. Please contact support.</p>
+    <div class="dashboard-wrapper">
 
-<p class="support-info">Support may ask you to right-click to view page source.</p>
+        <div class="dashboard-ecommerce">
 
-<div th:utext="'&lt;!--'" th:remove="tag"></div>
-<div th:utext="'Failed URL: ' +  ${url}" th:remove="tag">${url}</div>
-<div th:utext="'Exception: ' + ${exception.message}" th:remove="tag">${exception.message}</div>
-<ul th:remove="tag" class="stack-trace">
-    <li th:each="ste : ${exception.stackTrace}" th:remove="tag">
-        <span th:utext="${ste}" th:remove="tag">${ste}</span>
-    </li>
-</ul>
-<div th:utext="'--&gt;'" th:remove="tag"></div>
+            <div class="container-fluid dashboard-content">
+
+                <div class="ecommerce-widget">
+
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-12">
+
+                            <section class="panel panel-transparent">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Error Page</h2>
+                                </header>
+
+                                <div class="panel-body">
+
+                                    <div class="error-content">
+                                        <h1 class="error-title">Oops! Something went wrong.</h1>
+
+                                        <p th:if="${url}" class="error-info">
+                                            <b>Page:</b> <span th:text="${url}">Page URL</span>
+                                        </p>
+
+                                        <p th:if="${timestamp}" class="error-info" id='created'>
+                                            <b>Occurred:</b> <span th:text="${timestamp}">Timestamp</span>
+                                        </p>
+
+                                        <p th:if="${status}" class="error-info">
+                                            <b>Response Status:</b> <span th:text="${status}">status-code</span> <span
+                                                th:if="${error}" th:text="'('+${error}+')'">error ...</span>
+                                        </p>
+
+                                        <p class="error-message">Application has encountered an error. Please contact support.</p>
+
+                                        <p class="support-info">Support may ask you to right-click to view page source.</p>
+
+                                        <div th:utext="'&lt;!--'" th:remove="tag"></div>
+                                        <div th:utext="'Failed URL: ' +  ${url}" th:remove="tag">${url}</div>
+                                        <div th:utext="'Exception: ' + ${exception.message}" th:remove="tag">${exception.message}</div>
+                                        <ul th:remove="tag" class="stack-trace">
+                                            <li th:each="ste : ${exception.stackTrace}" th:remove="tag">
+                                                <span th:utext="${ste}" th:remove="tag">${ste}</span>
+                                            </li>
+                                        </ul>
+                                        <div th:utext="'--&gt;'" th:remove="tag"></div>
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:replace="/fragments/footer :: footer"></div>
+
+</div>
+
+<div th:replace="/fragments/javascript :: js"></div>
+
 </body>
 
 </html>
